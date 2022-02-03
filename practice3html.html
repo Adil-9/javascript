@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="name">Name will be here</p>
+<button type="button" onclick="Name()">Click to see the name</button>
+<br><br>
+year: <span id="year"></span><br>
+
+today is: <span id="weekday"></span><br>
+
+date: <span id="day"></span><br>
+
+month: <span id="month"></span><br>
+
+time: <span id="time"></span><br>
+
+days until graduation (20/06/2024): <span id="dayUntilGraduation"></span>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function Name() {
+  document.getElementById("name").innerHTML = "Adil Maralbayev CS-2113";
+}
+function addZero(i) {
+  if (i < 10) {i = "0" + i}
+  return i;
+}
+const weekdays = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
+const d = new Date();
+let year = d.getYear();
+let weekday = weekdays[d.getDay()];
+let day = d.getDate();
+let month = d.getMonth();
+let h = addZero(d.getHours());
+let m = addZero(d.getMinutes());
+let s = addZero(d.getSeconds());
+let time = h + ":" + m + ":" + s;
+let timeOfGraduation = Math.round((1718820000000 - d.getTime())/(1000*60*60*24));
+document.getElementById("year").innerHTML = year+1900;
+document.getElementById("weekday").innerHTML = weekday;
+document.getElementById("day").innerHTML = day;
+document.getElementById("month").innerHTML = month;
+document.getElementById("time").innerHTML = time;
+document.getElementById("dayUntilGraduation").innerHTML = timeOfGraduation;
+
+
+
+
+
+</script>
+
+</body>
+</html> 
